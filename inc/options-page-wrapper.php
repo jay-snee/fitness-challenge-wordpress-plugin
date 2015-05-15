@@ -18,29 +18,25 @@
 
 						<div class="inside">
 							<table class="form-table">
-								<tr>
-									<th class="row-title"><?php esc_attr_e( 'Table header cell #1', 'wp_admin_style' ); ?></th>
-									<th><?php esc_attr_e( 'Table header cell #2', 'wp_admin_style' ); ?></th>
-								</tr>
 								<tr valign="top">
 									<td scope="row"><label for="tablecell"><?php esc_attr_e(
 												'Table data cell #1, with label', 'wp_admin_style'
 											); ?></label></td>
 									<td><?php esc_attr_e( 'Table Cell #2', 'wp_admin_style' ); ?></td>
 								</tr>
-								<tr valign="top" class="alternate">
-									<td scope="row"><label for="tablecell"><?php esc_attr_e(
-												'Table Cell #3, with label and class', 'wp_admin_style'
-											); ?> <code>alternate</code></label></td>
-									<td><?php esc_attr_e( 'Table Cell #4', 'wp_admin_style' ); ?></td>
-								</tr>
-								<tr valign="top">
-									<td scope="row"><label for="tablecell"><?php esc_attr_e(
-												'Table Cell #5, with label', 'wp_admin_style'
-											); ?></label></td>
-									<td><?php esc_attr_e( 'Table Cell #6', 'wp_admin_style' ); ?></td>
-								</tr>
 							</table>
+						</div>
+						<!-- .inside -->
+
+					</div>
+					<!-- .postbox -->
+
+					<div class="postbox">
+
+						<h3><span>Most Recent Trophies</span></h3>
+
+						<div class="inside">
+							<h4>Last 10 Trophies Awarded</h4>
 						</div>
 						<!-- .inside -->
 
