@@ -12,10 +12,10 @@
     'post_status'      => 'publish',
     'suppress_filters' => true 
   );
-  $myposts = get_posts( $args );
+  $loop = new WP_Query($args);
   ?>
   <ul>
-    <?php foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <li>
         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
       </li>
