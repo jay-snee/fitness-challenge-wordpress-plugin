@@ -14,13 +14,33 @@
 
 					<div class="postbox">
 
-						<h3><span><?php esc_attr_e( 'Main Content Header', 'wp_admin_style' ); ?></span></h3>
+						<h3><span><?php esc_attr_e( 'Settings', 'wp_admin_style' ); ?></span></h3>
 
 						<div class="inside">
-							<p><?php esc_attr_e(
-									'WordPress started in 2003 with a single bit of code to enhance the typography of everyday writing and with fewer users than you can count on your fingers and toes. Since then it has grown to be the largest self-hosted blogging tool in the world, used on millions of sites and seen by tens of millions of people every day.',
-									'wp_admin_style'
-								); ?></p>
+							<table class="form-table">
+								<tr>
+									<th class="row-title"><?php esc_attr_e( 'Table header cell #1', 'wp_admin_style' ); ?></th>
+									<th><?php esc_attr_e( 'Table header cell #2', 'wp_admin_style' ); ?></th>
+								</tr>
+								<tr valign="top">
+									<td scope="row"><label for="tablecell"><?php esc_attr_e(
+												'Table data cell #1, with label', 'wp_admin_style'
+											); ?></label></td>
+									<td><?php esc_attr_e( 'Table Cell #2', 'wp_admin_style' ); ?></td>
+								</tr>
+								<tr valign="top" class="alternate">
+									<td scope="row"><label for="tablecell"><?php esc_attr_e(
+												'Table Cell #3, with label and class', 'wp_admin_style'
+											); ?> <code>alternate</code></label></td>
+									<td><?php esc_attr_e( 'Table Cell #4', 'wp_admin_style' ); ?></td>
+								</tr>
+								<tr valign="top">
+									<td scope="row"><label for="tablecell"><?php esc_attr_e(
+												'Table Cell #5, with label', 'wp_admin_style'
+											); ?></label></td>
+									<td><?php esc_attr_e( 'Table Cell #6', 'wp_admin_style' ); ?></td>
+								</tr>
+							</table>
 						</div>
 						<!-- .inside -->
 
