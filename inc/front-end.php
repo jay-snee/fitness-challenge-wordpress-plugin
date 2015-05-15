@@ -12,18 +12,17 @@
     'post_status'      => 'publish',
     'suppress_filters' => true 
   );
-  $posts_array = get_posts( $args );
-
-
-
-  if ($posts_array->have_posts() ) : 
-    while ( have_posts() ) : the_post(); 
-      echo the_post();
-    endwhile;
-  endif; 
-
-
-  wp_reset_query();
+  $myposts = get_posts( $args );
+  ?>
+  <ul>
+    <?php foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+      <li>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+  <?php
+  wp_reset_postdata();?>
   echo $after_widget;
 
 ?>
