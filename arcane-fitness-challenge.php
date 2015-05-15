@@ -31,6 +31,42 @@
 		require('inc/options-page-wrapper.php');
 	}
 
+	class Arcane_Fitness_Challenge_Widget extends WP_Widget {
+
+		function arcane_fitness_challenge_widget() {
+			// Instantiate the parent object
+			parent::__construct( false, 'Fitness Challenge Trophies' );
+		}
+
+		function widget( $args, $instance ) {
+			extract($args);
+			$title = apply_filters( 'widget_title', $instance['title']);
+			require('inc/front-end.php')
+		}
+
+		function update( $new_instance, $old_instance ) {
+			// Save widget options
+			$instance = $old_instance;
+			$instance['title'] = strip_tags($new_instance['title']);
+
+			return $instance;
+		}
+
+		function form( $instance ) {
+			// Output admin widget options form
+
+			$title = esc_attr($instance['title']);
+			require('inc/widget-fields.php');
+
+		}
+	}
+
+	function arcane_fitness_challenge_register_widgets() {
+		register_widget( 'Arcane_Fitness_Challenge_Widget' );
+	}
+
+	add_action( 'widgets_init', 'arcane_fitness_challenge_register_widgets' );
+
 
 	function create_trophy_post_type() {
 	  register_post_type( 'trophy',
