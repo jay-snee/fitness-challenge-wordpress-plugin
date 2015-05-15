@@ -18,7 +18,11 @@
 <ul>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <li>
-      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      <?php if($display_as_link) { ?>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      <?php } else {
+        <?php the_title(); ?>
+      <?php } ?>
     </li>
   <?php endwhile; wp_reset_query();?>
 </ul>
