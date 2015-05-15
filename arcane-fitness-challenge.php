@@ -1,5 +1,7 @@
 <?php
 
+	defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
 	/*
 	* Plugin Name: Fitness Challenge App Plugin
 	* Plugin URI: http://www.arcaneindustries.co.uk/fitness-challenge
@@ -28,4 +30,21 @@
 		}
 		require('inc/options-page-wrapper.php');
 	}
+
+
+	function create_trophy_post_type() {
+	  register_post_type( 'trophy',
+	    array(
+	      'labels' => array(
+	        'name' => __( 'Trophies' ),
+	        'singular_name' => __( 'Trophy' )
+	      ),
+	      'public' => true,
+	      'has_archive' => true,
+	    )
+	  );
+	}
+
+	add_action( 'init', 'create_trophy_post_type' );
+
 ?>
