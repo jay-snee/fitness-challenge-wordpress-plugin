@@ -41,6 +41,8 @@
 		function widget( $args, $instance ) {
 			extract($args);
 			$title = apply_filters( 'widget_title', $instance['title']);
+			$num_trophies = $instance['num_trophies'];
+			$display_as_link = $instance['display_as_link'];
 			require('inc/front-end.php');
 		}
 
@@ -48,6 +50,8 @@
 			// Save widget options
 			$instance = $old_instance;
 			$instance['title'] = strip_tags($new_instance['title']);
+			$instance['num_trophies'] = strip_tags($new_instance['num_trophies']);
+			$instance['display_as_link'] = strip_tags($new_instance['display_as_link']);
 
 			return $instance;
 		}
@@ -56,6 +60,9 @@
 			// Output admin widget options form
 
 			$title = esc_attr($instance['title']);
+			$num_trophies = esc_attr($instance['num_trophies']);
+			$display_as_link = esc_attr($instance['display_as_link']);
+
 			require('inc/widget-fields.php');
 
 		}
