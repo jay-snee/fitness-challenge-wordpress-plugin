@@ -18,9 +18,9 @@
 <ul>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <li>
-      <?php if($display_as_link == TRUE) { ?>
+      <?php if($display_as_link) { ?>
         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-      <?php } else {
+      <?php } else { ?>
         <?php the_title(); ?>
       <?php } ?>
     </li>
