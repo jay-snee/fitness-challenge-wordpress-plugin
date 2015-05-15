@@ -22,7 +22,7 @@
     <?php endforeach; ?>
   </ul>
   <?php
-  wp_reset_postdata();?>
+  wp_reset_postdata();
   echo $after_widget;
 
 ?>
