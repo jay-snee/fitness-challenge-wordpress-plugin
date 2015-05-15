@@ -41,7 +41,7 @@
 		function widget( $args, $instance ) {
 			extract($args);
 			$title = apply_filters( 'widget_title', $instance['title']);
-			require('inc/front-end.php')
+			require('inc/front-end.php');
 		}
 
 		function update( $new_instance, $old_instance ) {
