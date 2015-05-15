@@ -13,17 +13,15 @@
     'suppress_filters' => true 
   );
   $loop = new WP_Query($args);
-  ?>
-  <ul>
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <li>
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
-  <?php
-  wp_reset_postdata();
-  echo $after_widget;
-
 ?>
+
+<ul>
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <li>
+      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    </li>
+  <?php endwhile; wp_reset_query();?>
+</ul>
+
+<?php echo $after_widget; ?>
 
