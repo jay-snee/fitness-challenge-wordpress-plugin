@@ -14,31 +14,31 @@
 
 					<div class="postbox">
 
-						<h3><span><?php esc_attr_e( 'Settings', 'wp_admin_style' ); ?></span></h3>
-
-						<div class="inside">
-							<table class="form-table">
-								<tr valign="top">
-									<td scope="row"><label for="tablecell"><?php esc_attr_e(
-												'Table data cell #1, with label', 'wp_admin_style'
-											); ?></label></td>
-									<td><?php esc_attr_e( 'Table Cell #2', 'wp_admin_style' ); ?></td>
-								</tr>
-							</table>
-						</div>
-						<!-- .inside -->
-
-					</div>
-					<!-- .postbox -->
-
-					<div class="postbox">
-
 						<h3><span>Most Recent Trophies</span></h3>
 
 						<div class="inside">
-							<h4>Last 10 Trophies Awarded</h4>
-						</div>
-						<!-- .inside -->
+							<h4>Last 100 Trophies Awarded</h4>
+							<?php 
+								$args = array(
+							    'posts_per_page'   => 100,
+							    'orderby'          => 'date',
+							    'order'            => 'DESC',
+							    'post_type'        => 'trophy',
+							    'post_status'      => 'publish',
+							    'suppress_filters' => true 
+							  );
+							  $loop = new WP_Query($args);
+							?>
+
+							<ul>
+							  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							    <li>
+							      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							    </li>
+							  <?php endwhile; wp_reset_query();?>
+							</ul>
+					</div>
+						
 
 					</div>
 					<!-- .postbox -->
